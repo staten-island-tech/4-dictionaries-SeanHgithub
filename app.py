@@ -33,20 +33,30 @@ items = [
 "department": "Technology"},
     
 ]
-total = 0
 cart = []
+total = 0
 for index, item in enumerate(items):
     print(index, ":", item["name"])
 y = input("what do you want?")
-cart.append(y)
-total += [items][y]["price"]
+for item in items:
+    if item["name"] == y:
+        cart.append(y)
+        total += item["price"]
+        break
 z = input("anything else?")
 while z == "yes":
     y = input("what do you want?")
-    cart.append(y)
-    total += [items][y]["price"]
+    for item in items:
+        if item["name"] == y:
+            cart.append(y)
+            total += item["price"]
+            break
     z = input("anything else?")
-    break
-print(cart, total)
+
+print(cart)
+print(total)
+
+
+
 
     
